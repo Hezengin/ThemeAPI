@@ -11,13 +11,11 @@ import retrofit2.Response;
 
 public class HomePresenter {
     private HomeView view;
-
     public HomePresenter(HomeView view) {
         this.view = view;
     }
 
     public void getCategories(){
-        view.showLoading();
         Call<Categories> categoriesCall = Utils.getApi().getCategories();
         categoriesCall.enqueue(new Callback<Categories>() {
             @Override
@@ -36,6 +34,5 @@ public class HomePresenter {
                 view.onErrorLoading(t.getLocalizedMessage());
             }
         });
-
     }
 }

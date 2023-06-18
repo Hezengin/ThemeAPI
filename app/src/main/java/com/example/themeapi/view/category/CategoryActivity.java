@@ -43,7 +43,7 @@ public class CategoryActivity extends AppCompatActivity {
 
         ViewPagerCategoryAdapter adapter = new ViewPagerCategoryAdapter(getSupportFragmentManager(), categories);
         viewPager.setAdapter(adapter);
-//        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
         viewPager.setCurrentItem(position, true);
         adapter.notifyDataSetChanged();
     }

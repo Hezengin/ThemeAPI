@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ThemealAPI</string>
+    <string name="search_your_recipes">Zoek Je Recepten…</string>
+    <string name="meal_categories">Maaltijd Categorieën</string>
+    <string name="category">Categorie</string>
+    <string name="country">Land</string>
+    <string name="instructions">INSTRUCTIES</string>
+    <string name="dot_loading">...</string>
+    <string name="Ingredients">INGREDIENTEN</string>
+    <string name="youtube">YOUTUBE</string>
+    <string name="source">BRON</string>
+    <string name="favorite">Favoriet</string>
+</resources>

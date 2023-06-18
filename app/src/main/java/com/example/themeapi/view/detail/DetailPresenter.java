@@ -31,10 +31,5 @@ public class DetailPresenter {
                 view.onErrorLoading(t.getLocalizedMessage());
             }
         });
-        //TODO #5 Call the void show loading before starting to make a request to the server
-
-        //TODO #6 Make a request to the server (Don't forget to hide loading when the response is received)
-
-        //TODO #7 Set response (meal)
     }
 }

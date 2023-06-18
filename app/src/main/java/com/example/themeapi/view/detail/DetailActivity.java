@@ -30,17 +30,17 @@ import java.util.List;
 
 public class DetailActivity extends AppCompatActivity implements DetailView{
 
-    Toolbar toolbar;
-    AppBarLayout appBarLayout;
-    CollapsingToolbarLayout collapsingToolbarLayout;
-    ImageView mealThumb;
-    TextView category;
-    TextView country;
-    TextView instructions;
-    TextView ingredients;
-    TextView measures;
-    TextView youtube;
-    TextView source;
+    private Toolbar toolbar;
+    private AppBarLayout appBarLayout;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+    private ImageView mealThumb;
+    private TextView category;
+    private TextView country;
+    private TextView instructions;
+    private TextView ingredients;
+    private TextView measures;
+    private TextView youtube;
+    private TextView source;
     private Meals.Meal meal;
 
     @Override

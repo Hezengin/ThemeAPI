@@ -30,11 +30,11 @@ import java.util.List;
 
 public class CategoryFragment extends Fragment implements CategoryView {
 
-    RecyclerView recyclerView;
-    ImageView imageCategory;
-    TextView textCategory;
-    AlertDialog.Builder descDialog;
-    CardView cardCategory;
+    private RecyclerView recyclerView;
+    private ImageView imageCategory;
+    private TextView textCategory;
+    private AlertDialog.Builder descDialog;
+    private CardView cardCategory;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

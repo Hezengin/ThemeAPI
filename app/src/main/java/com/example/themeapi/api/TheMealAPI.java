@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 
 public interface TheMealAPI {
     @GET("random.php")
-    Call<Meals> getMeal();
+    Call<Meals> getMeal();//nog implementeren
 
     @GET("categories.php")
     Call<Categories> getCategories();
