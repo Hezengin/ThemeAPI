@@ -12,7 +12,7 @@ public class Categories implements Serializable {
     @Expose
     private List<Category> categories = null;
 
-    public List<Categories.Category> getCategories() {
+    public List<Category> getCategories() {
         return categories;
     }
 

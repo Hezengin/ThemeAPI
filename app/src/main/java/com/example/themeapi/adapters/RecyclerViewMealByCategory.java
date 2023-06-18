@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.themeapi.R;
 import com.example.themeapi.model.Meals;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -36,9 +37,8 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewMealByCategory.RecyclerViewHolder viewHolder, int i) {
-
         String strMealThumb = meals.get(i).getStrMealThumb();
-        //Picasso.get().load(strMealThumb).placeholder(R.drawable.shadow_bottom_to_top).into(viewHolder.mealThumb);
+        Picasso.get().load(strMealThumb).into(viewHolder.mealThumb);
 
         String strMealName = meals.get(i).getStrMeal();
         viewHolder.mealName.setText(strMealName);
