@@ -16,11 +16,9 @@ public class DetailPresenter {
 
     public void getMealById(String mealName) {
 
-        view.showLoading();
         Utils.getApi().getMealByName(mealName).enqueue(new Callback<Meals>() {
             @Override
             public void onResponse(Call<Meals> call, Response<Meals> response) {
-                view.hideLoading();
                 if (response.isSuccessful() && response.body() != null){
                     view.setMeal(response.body().getMeals().get(0));
                 } else{
@@ -30,7 +28,6 @@ public class DetailPresenter {
 
             @Override
             public void onFailure(Call<Meals> call, Throwable t) {
-                view.hideLoading();
                 view.onErrorLoading(t.getLocalizedMessage());
             }
         });

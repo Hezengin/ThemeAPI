@@ -30,8 +30,7 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
     @NonNull
     @Override
     public RecyclerViewMealByCategory.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_recycler_meal,
-                viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_recycler_meal, viewGroup, false);
         return new RecyclerViewHolder(view);
     }
 

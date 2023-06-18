@@ -2,18 +2,14 @@ package com.example.themeapi.view.detail;
 
 import static com.example.themeapi.view.home.HomeActivity.EXTRA_DETAIL;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +39,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
     TextView instructions;
     TextView ingredients;
     TextView measures;
-    ProgressBar progressBar;
     TextView youtube;
     TextView source;
     private Meals.Meal meal;
@@ -62,7 +57,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         instructions = findViewById(R.id.instructions);
         ingredients = findViewById(R.id.ingredient);
         measures = findViewById(R.id.measure);
-        progressBar = findViewById(R.id.progressBar);
         youtube = findViewById(R.id.youtube);
         source = findViewById(R.id.source);
 
@@ -73,11 +67,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
 
         DetailPresenter presenter = new DetailPresenter(this);
         presenter.getMealById(mealName);
-
-        //TODO #9 Get data from the intent
-
-        //TODO #10 Declare the presenter (put the name of the meal name from the data intent to the presenter)
-
     }
 
     private void setupActionBar() {
@@ -107,16 +96,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         });
     }
 
-    @SuppressLint("ResourceType")
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.layout.menu_detail, menu);
-        MenuItem favoriteItem = menu.findItem(R.id.favorite);
-        Drawable favoriteItemColor = favoriteItem.getIcon();
-        setupColorActionBarIcon(favoriteItemColor);
-        return true;
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -126,16 +105,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    @Override
-    public void showLoading() {
-        progressBar.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideLoading() {
-        progressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override

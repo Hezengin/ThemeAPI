@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,9 +31,7 @@ import java.util.List;
 public class CategoryFragment extends Fragment implements CategoryView {
 
     RecyclerView recyclerView;
-    ProgressBar progressBar;
     ImageView imageCategory;
-    ImageView imageCategoryBg;
     TextView textCategory;
     AlertDialog.Builder descDialog;
     CardView cardCategory;
@@ -43,9 +40,7 @@ public class CategoryFragment extends Fragment implements CategoryView {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_category, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
-        progressBar = view.findViewById(R.id.progressBar);
         imageCategory = view.findViewById(R.id.imageCategory);
-        imageCategoryBg = view.findViewById(R.id.imageCategoryBg);
         textCategory = view.findViewById(R.id.textCategory);
         cardCategory = view.findViewById(R.id.cardCategory);
 
@@ -69,9 +64,6 @@ public class CategoryFragment extends Fragment implements CategoryView {
             Picasso.get()
                     .load(getArguments().getString("EXTRA_DATA_IMAGE"))
                     .into(imageCategory);
-            Picasso.get()
-                    .load(getArguments().getString("EXTRA_DATA_IMAGE"))
-                    .into(imageCategoryBg);
             descDialog = new AlertDialog.Builder(getActivity())
                     .setTitle(getArguments().getString("EXTRA_DATA_NAME"))
                     .setMessage(getArguments().getString("EXTRA_DATA_DESC"));
@@ -83,12 +75,12 @@ public class CategoryFragment extends Fragment implements CategoryView {
 
     @Override
     public void showLoading() {
-        progressBar.setVisibility(View.VISIBLE);
+
     }
 
     @Override
     public void hideLoading() {
-        progressBar.setVisibility(View.GONE);
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -112,8 +104,4 @@ public class CategoryFragment extends Fragment implements CategoryView {
     public void onErrorLoading(String message) {
         Utils.showDialogMessage(getActivity(), "Error ", message);
     }
-
-
-
-
 }
